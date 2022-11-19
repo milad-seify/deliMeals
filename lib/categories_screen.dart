@@ -4,6 +4,8 @@ import './category_item.dart';
 import './dummy_data.dart';
 
 class CategoriesScreen extends StatelessWidget {
+  //static const String id = '/categories-screen';
+
   const CategoriesScreen({super.key});
 
   @override
@@ -11,14 +13,18 @@ class CategoriesScreen extends StatelessWidget {
     return GridView(
       padding: const EdgeInsets.all(10),
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 200,
-          childAspectRatio: 3 / 2,
-          mainAxisExtent: 100,
-          crossAxisSpacing: 20,
-          mainAxisSpacing: 20),
-      children: dummyCategories
-          .map((catData) =>
-              CategoryItem(title: catData.title, color: catData.color))
+        //TODO : Use MediaQuery
+        maxCrossAxisExtent: 200,
+        childAspectRatio: 3 / 2,
+        crossAxisSpacing: 20,
+        mainAxisSpacing: 20,
+        //mainAxisExtent: 100,
+      ),
+      children: dummyCategoriesData
+          .map(
+            (catData) => CategoryItem(
+                id: catData.id, title: catData.title, color: catData.color),
+          )
           .toList(),
     );
   }
