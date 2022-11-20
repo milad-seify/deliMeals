@@ -100,7 +100,7 @@ const dummyMealData = [
     affordability: Affordability.Affordable,
     complexity: Complexity.Simple,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2018/07/11/21/51/toast-3532016_1280.jpg',
+        'https://thomassixt.de/en/wp-content/uploads/sites/2/2019/08/toast-hawai-recipe-picture-1.webp',
     duration: 10,
     ingredients: [
       '1 Slice White Bread',
@@ -129,7 +129,7 @@ const dummyMealData = [
     affordability: Affordability.Pricey,
     complexity: Complexity.Simple,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg',
+        'https://www.cookhomey.com/wp-content/uploads/2021/02/Classic-homemade-hamburger.jpg',
     duration: 45,
     ingredients: [
       '300g Cattle Hack',
@@ -160,7 +160,7 @@ const dummyMealData = [
     affordability: Affordability.Luxurious,
     complexity: Complexity.Challenging,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2018/03/31/19/29/schnitzel-3279045_1280.jpg',
+        'https://mariaesschmecktmir.com/wp-content/uploads/2022/02/Wiener-Schnitzel-1-von-1.jpg',
     duration: 60,
     ingredients: [
       '8 Veal Cutlets',
@@ -189,15 +189,15 @@ const dummyMealData = [
   Meal(
     id: 'm5',
     categoriesId: [
-      'c2'
-          'c5',
+      'c2',
+      'c5',
       'c10',
     ],
     title: 'Salad with Smoked Salmon',
     affordability: Affordability.Luxurious,
     complexity: Complexity.Simple,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2016/10/25/13/29/smoked-salmon-salad-1768890_1280.jpg',
+        'https://www.vibrantplate.com/wp-content/uploads/2017/11/Smoked-salmon-lentil-salad-01.jpg',
     duration: 15,
     ingredients: [
       'Arugula',
@@ -232,7 +232,7 @@ const dummyMealData = [
     affordability: Affordability.Affordable,
     complexity: Complexity.Hard,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2017/05/01/05/18/pastry-2274750_1280.jpg',
+        'https://www.torresyribelles.com/wp-content/uploads/2016/09/23-09-2016-R4.png',
     duration: 240,
     ingredients: [
       '4 Sheets of Gelatine',
@@ -267,7 +267,7 @@ const dummyMealData = [
     affordability: Affordability.Affordable,
     complexity: Complexity.Simple,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2018/07/10/21/23/pancake-3529653_1280.jpg',
+        'https://www.inspiredtaste.net/wp-content/uploads/2016/07/Pancake-Recipe-1-1200.jpg',
     duration: 20,
     ingredients: [
       '1 1/2 Cups all-purpose Flour',
@@ -298,7 +298,7 @@ const dummyMealData = [
     affordability: Affordability.Pricey,
     complexity: Complexity.Challenging,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2018/06/18/16/05/indian-food-3482749_1280.jpg',
+        'https://cafedelites.com/wp-content/uploads/2018/04/Best-Chicken-Tikka-Masala-IMAGE-1.jpg',
     duration: 35,
     ingredients: [
       '4 Chicken Breasts',
@@ -331,7 +331,7 @@ const dummyMealData = [
     affordability: Affordability.Affordable,
     complexity: Complexity.Hard,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2014/08/07/21/07/souffle-412785_1280.jpg',
+        'https://img.taste.com.au/rzQh6Xgx/taste/2016/11/easy-molten-chocolate-souffle-58756-1.jpeg',
     duration: 45,
     ingredients: [
       '1 Teaspoon melted Butter',
@@ -382,7 +382,7 @@ const dummyMealData = [
     affordability: Affordability.Luxurious,
     complexity: Complexity.Simple,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2018/04/09/18/26/asparagus-3304997_1280.jpg',
+        'https://recipe30.com/wp-content/uploads/2016/10/asparagus-salad-848x477.jpg',
     duration: 30,
     ingredients: [
       'White and Green Asparagus',

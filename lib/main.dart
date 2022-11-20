@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'screens/main_screen.dart';
-import 'screens/category_meals_screen.dart';
+import './screens/main_screen.dart';
+import './screens/category_meals_screen.dart';
 
 void main() => runApp(const MyApp());
 
+//TODO : set private
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
       initialRoute: MyHomePage.id,
       routes: {
         MyHomePage.id: (context) => const MyHomePage(),
-        CategoryMealsScreen.id: (context) => CategoryMealsScreen(),
+        CategoryMealsScreen.id: (context) => const CategoryMealsScreen(),
       },
     );
   }
