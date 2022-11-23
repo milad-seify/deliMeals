@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../ink_well.dart';
 import '../widgets/meal_item.dart';
 import '../dummy_data.dart';
 
@@ -27,6 +28,15 @@ class CategoryMealsScreen extends StatelessWidget {
     //TODO : check Platform Io
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const MyStatefulWidget())),
+            icon: const Icon(Icons.add),
+          )
+        ],
         //    automaticallyImplyLeading: false,
         centerTitle: true,
         title: Text(categoryTitle!),
@@ -34,6 +44,7 @@ class CategoryMealsScreen extends StatelessWidget {
       body: ListView.builder(
         itemBuilder: (ctx, index) {
           return MealItem(
+            id: categoryMeals[index].id,
             title: categoryMeals[index].title,
             imageUrl: categoryMeals[index].imageUrl,
             affordability: categoryMeals[index].affordability,

@@ -1,25 +1,28 @@
 import 'package:flutter/material.dart';
 
+import '../screens/meal_detail_screen.dart';
 import '../models/meal.dart';
 import 'card_footer_mail_item.dart';
 
 class MealItem extends StatelessWidget {
   const MealItem(
       {Key? key,
+      required this.id,
       required this.title,
       required this.imageUrl,
       required this.affordability,
       required this.complexity,
       required this.duration})
       : super(key: key);
-
+  final String id;
   final String title;
   final String imageUrl;
   final Complexity complexity;
   final Affordability affordability;
   final int duration;
 
-  void selectCat() {}
+  Future selectMeal(BuildContext context) =>
+      Navigator.of(context).pushNamed(MealDetailScreen.id, arguments: id);
 
   String get complexityText {
     switch (complexity) {
@@ -46,17 +49,19 @@ class MealItem extends StatelessWidget {
         return 'Pricey';
         break;
       case Affordability.Luxurious:
-        return 'Hard';
+        return 'Luxurious';
         break;
       default:
-        return 'Luxurious';
+        return 'Unknown';
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    Widget buildImage() => Image.network(imageUrl,
+        height: 250, width: double.infinity, fit: BoxFit.cover);
     return InkWell(
-      onTap: selectCat,
+      onTap: () => selectMeal(context),
       child: Card(
         elevation: 5.0,
         margin: const EdgeInsets.all(10),
@@ -68,12 +73,11 @@ class MealItem extends StatelessWidget {
             Stack(
               children: <Widget>[
                 ClipRRect(
-                  borderRadius: const BorderRadius.only(
-                    topRight: Radius.circular(15.0),
-                    topLeft: Radius.circular(15.0),
+                  borderRadius: const BorderRadius.vertical(
+                    top: Radius.circular(15.0),
                   ),
-                  child: Image.network(imageUrl,
-                      height: 250, width: double.infinity, fit: BoxFit.cover),
+                  // clipBehavior: Clip.antiAlias,
+                  child: buildImage(),
                 ),
                 Positioned(
                   bottom: 20.0,
