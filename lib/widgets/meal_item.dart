@@ -12,7 +12,8 @@ class MealItem extends StatelessWidget {
       required this.imageUrl,
       required this.affordability,
       required this.complexity,
-      required this.duration})
+      required this.duration,
+      required this.removeItem})
       : super(key: key);
   final String id;
   final String title;
@@ -20,21 +21,30 @@ class MealItem extends StatelessWidget {
   final Complexity complexity;
   final Affordability affordability;
   final int duration;
+  final Function removeItem;
 
-  Future selectMeal(BuildContext context) =>
-      Navigator.of(context).pushNamed(MealDetailScreen.id, arguments: id);
+  Future selectMeal(BuildContext context) => Navigator.of(context)
+          .pushNamed(
+        MealDetailScreen.id,
+        arguments: id,
+      )
+          .then(
+        (result) {
+          if (result != null) removeItem(result);
+        },
+      );
 
   String get complexityText {
     switch (complexity) {
       case Complexity.Simple:
         return 'Simple';
-        break;
+      //  break;
       case Complexity.Challenging:
         return 'Challenging';
-        break;
+      //  break;
       case Complexity.Hard:
         return 'Hard';
-        break;
+      //   break;
       default:
         return 'Unknown';
     }
@@ -44,13 +54,13 @@ class MealItem extends StatelessWidget {
     switch (affordability) {
       case Affordability.Affordable:
         return 'Affordable';
-        break;
+      //    break;
       case Affordability.Pricey:
         return 'Pricey';
-        break;
+      //   break;
       case Affordability.Luxurious:
         return 'Luxurious';
-        break;
+      //  break;
       default:
         return 'Unknown';
     }
@@ -104,9 +114,10 @@ class MealItem extends StatelessWidget {
               padding:
                   const EdgeInsets.symmetric(horizontal: 6.0, vertical: 8.0),
               child: CardFooterMealItem(
-                  duration: duration,
-                  complexityText: complexityText,
-                  affordabilityText: affordabilityText),
+                duration: duration,
+                complexityText: complexityText,
+                affordabilityText: affordabilityText,
+              ),
             ),
           ],
         ),

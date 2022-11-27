@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
 
+import '../screens/main_screen.dart';
+import '../screens/filters_screen.dart';
+
 class MainDrawer extends StatelessWidget {
   const MainDrawer({super.key});
 
-  Widget buildIcon(String title, IconData icon) {
+  Widget buildIcon(String title, IconData icon,
+      {required VoidCallback selectHandler}) {
     return ListTile(
       leading: Icon(icon, size: 30),
-      title: Text(title,
-          style: const TextStyle(
-            fontFamily: 'RobotoCondensed',
-            fontWeight: FontWeight.w600,
-            fontSize: 20,
-          )),
+      title: Text(
+        title,
+        style: const TextStyle(
+          fontFamily: 'RobotoCondensed',
+          fontWeight: FontWeight.w600,
+          fontSize: 20,
+        ),
+      ),
+      onTap: selectHandler,
     );
   }
 
@@ -19,7 +26,7 @@ class MainDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       elevation: 6.0,
-      //shape: ShapeBorder.lerp(a, b, t),
+      // shape: ShapeBorder.,
       child: Column(
         children: <Widget>[
           Container(
@@ -38,8 +45,18 @@ class MainDrawer extends StatelessWidget {
                   color: Colors.red),
             ),
           ),
-          buildIcon('Meals', Icons.restaurant),
-          buildIcon('Filters', Icons.settings),
+          buildIcon(
+            'Meals',
+            Icons.restaurant,
+            selectHandler: () =>
+                Navigator.of(context).pushReplacementNamed(MyHomePage.id),
+          ),
+          buildIcon(
+            'Filters',
+            Icons.settings,
+            selectHandler: () =>
+                Navigator.of(context).pushReplacementNamed(FiltersScreen.id),
+          ),
         ],
       ),
     );

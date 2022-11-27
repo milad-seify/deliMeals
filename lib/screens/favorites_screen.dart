@@ -5,11 +5,9 @@ class FavoritesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: const Text(
-        'test',
-        textAlign: TextAlign.center,
-      ),
+    return const Text(
+      'test',
+      textAlign: TextAlign.center,
     );
   }
 }

@@ -14,8 +14,10 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     Future selectCategory(BuildContext ctx) {
       //TODO : CupertinoPageRoute
-      return Navigator.of(ctx).pushNamed(CategoryMealsScreen.id,
-          arguments: {'id': id, 'title': title});
+      return Navigator.of(ctx).pushNamed(
+        CategoryMealsScreen.id,
+        arguments: {'id': id, 'title': title},
+      );
     }
 
     return Material(
@@ -48,9 +50,10 @@ class CategoryItem extends StatelessWidget {
           child: Text(
             title,
             style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontFamily: 'RobotoCondensed',
-                fontSize: 20),
+              fontWeight: FontWeight.bold,
+              fontFamily: 'RobotoCondensed',
+              fontSize: 20,
+            ),
           ),
         ),
       ),

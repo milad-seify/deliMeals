@@ -49,7 +49,9 @@ class _MyHomePageState extends State<MyHomePage> {
         : Scaffold(
             appBar: appBar as PreferredSizeWidget,
             body: _pages[_selectedPageIndex]['page'],
-            drawer: SafeArea(child: MainDrawer()),
+            drawer: const SafeArea(
+              child: MainDrawer(),
+            ),
             bottomNavigationBar: BottomNavigationBar(
               onTap: _selectPage,
               currentIndex: _selectedPageIndex,
